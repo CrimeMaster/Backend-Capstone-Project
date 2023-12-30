@@ -1,4 +1,5 @@
 const express = require('express');
+const home = require("./routes/home");
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
@@ -15,6 +16,9 @@ app.use(cors())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
+//Routes
+app.use("/home", home)
+app.get("/", (req, res) => { res.send("Express on Vercel"); })
 
 
 
