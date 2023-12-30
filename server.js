@@ -5,6 +5,8 @@ const dotenv = require('dotenv')
 dotenv.config()
 const cors = require('cors')
 const authorization = require("./middleware/authorization");
+const authRoutes = require("./routes/auth");
+const jobRoutes = require("./routes/job");
 
 const app = express()
 

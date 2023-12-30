@@ -7,7 +7,7 @@ const jobPostSchema = new mongoose.Schema({
   },
   remote: {
     type: String,
-    enum: [Remote, office],
+    enum: ["Remote", "office"],
     required: true,
   },
   skillsRequired: {
@@ -51,8 +51,9 @@ const jobPostSchema = new mongoose.Schema({
   },
   about: {
     type: String,
+    
     required: true,
   },
 });
 
-modulr.exports = mongoose.model("JobPost", jobPostSchema);
+module.exports = mongoose.model("JobPost", jobPostSchema);
