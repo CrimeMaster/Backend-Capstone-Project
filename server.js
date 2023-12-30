@@ -18,7 +18,10 @@ app.use(bodyParser.json())
 
 //Routes
 app.use("/home", home)
-app.get("/", (req, res) => { res.send("Express on Vercel"); })
+app.use("api/auth", authRoutes);
+app.use("api/job", jobRoutes);
+
+app.get("/", (req, res) => { res.send("Backend Capstone Project"); })
 
 
 
