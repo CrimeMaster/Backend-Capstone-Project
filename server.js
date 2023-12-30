@@ -9,6 +9,7 @@ const authRoutes = require("./routes/auth");
 const jobRoutes = require("./routes/job");
 
 const app = express()
+const port = process.env.port || 9001
 
 app.use(cors())
 app.use(bodyParser.urlencoded({extended: false}))
@@ -31,7 +32,7 @@ app.get("/page", authorization, (req, res) => {
     });
   });
 
-app.listen(process.env.port, () => {
+app.listen(port, () => {
     mongoose.connect(process.env.MONGOdb_URL)
     .then(() => console.log(`Server running on http://localhost:${process.env.port}`))
     .catch(error => console.log(error))
