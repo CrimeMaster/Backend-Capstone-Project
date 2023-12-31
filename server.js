@@ -39,7 +39,7 @@ app.get("/page", authorization, (req, res) => {
     });
   });
 
-app.listen(4000, () => {
+app.listen(process.env.port, () => {
     mongoose.connect('mongodb+srv://admin123:admin123@cluster0.xy5mwr8.mongodb.net/?retryWrites=true&w=majority')
     .then(() => console.log(`Server running on http://localhost:${process.env.port}`))
     .catch(error => console.log(error))
